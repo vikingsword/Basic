@@ -12,4 +12,7 @@ add_executable(Basic main.cpp
         demo1/06_operators.cpp
         demo1/07_process_control.cpp
         demo1/08_array.cpp
+        demo1/09_function.cpp
+        demo1/10_finction_with_file.cpp
+        demo1/11_pointer.cpp
 )
