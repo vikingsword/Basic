@@ -15,4 +15,5 @@ add_executable(Basic main.cpp
         demo1/09_function.cpp
         demo1/10_finction_with_file.cpp
         demo1/11_pointer.cpp
+        demo1/12_struct.cpp
 )
