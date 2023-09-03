@@ -73,7 +73,7 @@
 ////    cout << str << endl;
 ////    // c++ 中的字符串
 ////    // 这种方式需要包含一个头文件 #include <string>
-////    string str1 = "p1_p71";
+////    string str1 = "p1_p83";
 ////    cout << str1 << endl;
 //
 //
