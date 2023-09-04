@@ -18,4 +18,8 @@ add_executable(Basic main.cpp
         p1_p83/12_struct.cpp
         p1_p83/temp.cpp
         p1_p83/13_address_manager.cpp
+        p84/01_memory_mode.cpp
+        p84/02_function_enhance.cpp
+        p84/03_object.cpp
+        p84/temp.cpp
 )
