@@ -3,16 +3,26 @@
 //
 //class Person{
 //private:
-//    int age;
+//    int m_age;
 //
 //public:
-//    int getAge(){
-//        return age;
+//    void setAge(int age){
+//        if (age > 100){
+//            cout << "输入的年龄有误 " << endl;
+//        }
+//        m_age = age;
 //    }
+//
+//    int getAge(){
+//        return m_age;
+//    }
+//
+//
 //};
 //
 //int main(){
 //    Person p;
+//    p.setAge(1111);
 //    int age = p.getAge();
 //    cout << "age = " << age << endl;
 //

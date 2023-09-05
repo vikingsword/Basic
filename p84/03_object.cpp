@@ -1,4 +1,5 @@
 #include "iostream"
+
 using namespace std;
 
 const double PI = 3.14;
@@ -16,29 +17,31 @@ public:
     }
 };
 
-class Student{
+class Student {
 private:
     string name;
     int id;
 
 public:
-    void setName(string set_name){
+    void setName(string set_name) {
         name = set_name;
     }
-    void setId(int sid){
+
+    void setId(int sid) {
         id = sid;
     }
 
-    void showName(){
+    void showName() {
         cout << "name = " << name << endl;
     }
-    void showId(){
+
+    void showId() {
         cout << "id = " << id << endl;
     }
 
 };
 
-class Person{
+class Person {
 public:
     string m_Name;
 protected:
@@ -47,7 +50,7 @@ private:
     int m_Password;
 
 private:
-    void fun(){
+    void fun() {
         m_Name = "张三";
         m_Car = "tax";
         m_Password = 123;
@@ -55,18 +58,19 @@ private:
 };
 
 
-class C1{
+class C1 {
     // 默认权限是私有
     int m_A;
 };
-struct C2{
+
+struct C2 {
     // 默认权限是公共
     int m_A;
 };
 
 
 // 私有化成员变量
-class Person2{
+class Person2 {
 
 private:
     string m_Name;
@@ -74,26 +78,156 @@ private:
     string m_Lover;
 
 public:
-    void setName(string name){
+    void setName(string name) {
         m_Name = name;
     }
-    string getName(){
+
+    string getName() {
         return m_Name;
     }
 
-    int getAge(){
-        m_Age = 10;
+    void setAge(int age) {
+        if (age > 100 || age < 0) {
+            cout << "输入的年龄有误" << endl;
+            return;
+        }
+    }
+
+    int getAge() {
         return m_Age;
     }
 
-    void setLover(string lover){
+    void setLover(string lover) {
         m_Lover = lover;
+    }
+};
+
+
+// 案例： 设计立方体类
+//求出立方体的面积和体积
+//分别用全局函数和成员函数判断两个立方体是否相等
+class Cube {
+private:
+    double m_H;
+    double m_L;
+    double m_W;
+
+public:
+    void set_H(double H) {
+        m_H = H;
+    }
+
+    void set_L(double L) {
+        m_L = L;
+    }
+
+    void set_W(double W) {
+        m_W = W;
+    }
+
+    double get_w() {
+        return m_W;
+    }
+
+    double get_l() {
+        return m_L;
+    }
+
+    double get_h() {
+        return m_H;
+    }
+
+    void init_cube(double h, double w, double l) {
+        m_H = h;
+        m_L = l;
+        m_W = w;
+    }
+
+
+    double get_area() {
+        return 2 * ((m_H * m_L) + (m_H * m_W) + (m_L * m_W));
+    }
+
+    double get_volume() {
+        return m_H * m_L * m_W;
+    }
+
+    // 利用成员函数判断两个立方体是否相等
+    bool is_same_by_class(Cube &c) {
+        if (m_L == c.get_l() && m_W == c.get_w() && m_H == c.get_h()) {
+            return true;
+        }
+        return false;
     }
 
 
 };
 
-int main(){
+
+void if_equal(Cube c1, Cube c2) {
+    if (c1.get_h() == c2.get_h() && c1.get_l() == c2.get_l() && c1.get_w() == c2.get_w()) {
+        cout << "两个立方体相等 " << endl;
+    } else {
+        cout << "不相等" << endl;
+    }
+}
+
+
+class Point {
+private:
+    int m_x;
+    int m_y;
+public:
+    void set_x(int x){
+        m_x = x;
+    }
+    void set_y(int y){
+        m_y = y;
+    }
+
+    int get_x(){
+        return m_x;
+    }
+
+    int get_y(){
+        return m_y;
+    }
+
+
+
+};
+
+class Circle2 {
+private:
+    int m_R;
+    Point m_center;
+
+public:
+
+    void set_r(int r){
+        m_R = r;
+    }
+
+    int get_r(){
+        return m_R;
+    }
+
+    void set_center(Point center){
+        m_center = center;
+    }
+
+    Point get_center(){
+        return m_center;
+    }
+
+};
+
+void isInCircle(Circle2 &c) {
+
+}
+
+
+int main() {
 
 //    // 通过圆类，创建具体的圆
 //    Circle cl;
@@ -131,18 +265,38 @@ int main(){
 //    c2.m_A = 100;
 
 
-    /**
-     * 成员属性设置为私有:
-     * 优点1：将所有成员属性设置为私有，可以自己控制读写权限
-     * 优点2：对于写权限，我们可以检测数据的有效性
-     */
-    Person2 p2;
-    p2.setName("wu");
-    string name = p2.getName();
-    cout << "name = " << name << endl;
-    int age = p2.getAge();
-    cout << "age = " << age << endl;
-    p2.setLover("ls");
+//    /**
+//     * 成员属性设置为私有:
+//     * 优点1：将所有成员属性设置为私有，可以自己控制读写权限
+//     * 优点2：对于写权限，我们可以检测数据的有效性
+//     */
+//    Person2 p2;
+//    p2.setName("wu");
+//    string name = p2.getName();
+//    cout << "name = " << name << endl;
+////    int age = p2.getAge();
+////    cout << "age = " << age << endl;
+//    p2.setLover("ls");
+//    p2.setAge(103);
+
+
+//    Cube c;
+//    c.set_H(1);
+//    c.set_L(2);
+//    c.set_W(3);
+//    cout << c.get_area() << endl;
+//    cout << c.get_volume() << endl;
+//
+//    Cube c1, c2, c3;
+//    c1.init_cube(1, 2, 3);
+//    c2.init_cube(1, 2, 3);
+//    c3.init_cube(1, 2, 1);
+//    if_equal(c1, c2);
+//    if_equal(c1, c3);
+//    bool flag = c1.is_same_by_class(c2);
+//    if (flag) {
+//        cout << "相等" << endl;
+//    }
 
 
 }
