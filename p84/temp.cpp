@@ -22,7 +22,7 @@
 //
 //int main(){
 //    Person p;
-//    p.setAge(1111);
+//    p.setAge(12);
 //    int age = p.getAge();
 //    cout << "age = " << age << endl;
 //
