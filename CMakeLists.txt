@@ -24,4 +24,5 @@ add_executable(Basic main.cpp
         p84/temp.cpp
         p84/04_object_2.cpp
         p84/05_this_pointer.cpp
+        p84/06_friend.cpp
 )

@@ -3,27 +3,33 @@
 //
 //class Person{
 //private:
-//    int m_age;
+//    static int m_age;
 //
 //public:
-//    void setAge(int age){
-//        if (age > 100){
-//            cout << "输入的年龄有误 " << endl;
-//        }
-//        m_age = age;
+//    static string m_sid;
+//
+//    void setAge(int age) {
+//        this->m_age = age;
 //    }
 //
 //    int getAge(){
-//        return m_age;
+//        return this->m_age;
 //    }
-//
 //
 //};
 //
+//int Person::m_age = 10;
+//
+////string Person::m_sid = "123123123";
+//
+//
+//
 //int main(){
+//
 //    Person p;
-//    p.setAge(12);
-//    int age = p.getAge();
-//    cout << "age = " << age << endl;
+//    p.setAge(10);
+//    cout << "p.age = " << p.getAge() << endl;
+//
+//    cout << "p.sid = " << p.m_sid << endl;
 //
 //}
