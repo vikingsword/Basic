@@ -151,23 +151,24 @@ void test02() {
  * 递增运算符重载
  * @return
  */
-class MyInteger{
+class MyInteger {
     // 让全局函数访问类中的私有成员变量
-    friend ostream& operator<<(ostream &cout, MyInteger myInteger);
+    friend ostream &operator<<(ostream &cout, MyInteger myInteger);
+
 public:
-    MyInteger(){
+    MyInteger() {
         m_num = 0;
     }
 
     // 重载前置递增
-    MyInteger& operator++(){
+    MyInteger &operator++() {
         m_num++;
         return *this;
     }
 
     // 重载后置递增
     // int 代表占位参数，可以用于输出前置和后置递增
-    MyInteger operator++(int){
+    MyInteger operator++(int) {
         // 记录当前结果
         MyInteger temp = *this;
         // 递增
@@ -179,25 +180,198 @@ public:
 private:
     int m_num;
 
-
 };
 
 // 先重载左移运算符
-ostream& operator<<(ostream &cout, MyInteger myInteger) {
+ostream &operator<<(ostream &cout, MyInteger myInteger) {
     cout << myInteger.m_num;
     return cout;
 }
 
-void test03(){
+void test03() {
     MyInteger myInteger;
     cout << ++myInteger << endl;
 }
 
-void test04(){
+void test04() {
     MyInteger myInteger;
     cout << "myInteger = " << myInteger++ << endl;
     cout << "myInteger = " << myInteger << endl;
 }
+
+
+/**
+ * 赋值运算符重载
+ */
+class Person5 {
+public:
+    Person5(int age) {
+        // new int 返回的为 int*
+        m_age = new int(age);
+    }
+
+    // 堆区开辟的空间需要手动释放
+//    ~Person5(){
+//        if (m_age != NULL){
+//            delete m_age;
+//            m_age = NULL;
+//        }
+//    }
+
+    Person5 &operator=(Person5 &p) {
+        if (m_age != NULL) {
+            delete m_age;
+            m_age = NULL;
+        }
+        m_age = new int(*p.m_age);
+        return *this;
+    }
+
+
+    int *m_age;
+};
+
+void test05() {
+    Person5 p(10);
+
+    Person5 p2(20);
+
+    p2 = p;
+
+    cout << "p.age = " << *p.m_age << endl;
+    cout << "p2.age = " << *p2.m_age << endl;
+}
+
+
+void test05_1() {
+    int a = 1;
+    int b = 2;
+    int c = 3;
+
+    c = b = a;
+
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+    cout << "c = " << c << endl;
+
+
+}
+
+void test05_2() {
+    Person5 p1(1);
+    Person5 p2(2);
+    Person5 p3(3);
+
+    p3 = p2 = p1;
+
+    cout << "p1.age = " << *p1.m_age << endl;
+    cout << "p2.age = " << *p2.m_age << endl;
+    cout << "p3.age = " << *p3.m_age << endl;
+}
+
+
+/**
+ * 重载关系运算符
+ * @return
+ */
+class Person6 {
+public:
+    Person6(string name, int age) {
+        m_name = name;
+        m_age = age;
+    }
+
+    // 重载 == 号
+    bool operator==(Person6 &p) {
+        if (this->m_age == p.m_age && this->m_name == p.m_name) {
+            return true;
+        }
+        return false;
+    }
+
+    // 重载 != 号
+    bool operator!=(Person6 &p) {
+        if (this->m_name != p.m_name || this->m_age != p.m_age) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    string m_name;
+    int m_age;
+
+};
+
+
+void test06() {
+    Person6 p1("zs", 10);
+    Person6 p2("ls", 20);
+    Person6 p3("zs", 10);
+
+    if (p1 == p2) {
+        cout << "相等" << endl;
+    } else {
+        cout << "不相等 " << endl;
+    }
+}
+
+void test06_2() {
+    Person6 p1("zs", 10);
+    Person6 p2("ls", 20);
+    Person6 p3("zs", 10);
+
+    if (p1 == p3) {
+        cout << "不相等" << endl;
+    } else {
+        cout << "相等 " << endl;
+    }
+}
+
+
+/**
+ * 函数调用运算符重载 () --> 仿函数
+ * 使用起来非常像函数调用，所以叫仿函数
+ */
+// 打印输出类
+class MyPrint {
+public:
+    // 重载函数调用运算符
+    void operator()(string test) {
+        cout << test << endl;
+    }
+
+};
+
+void MyPrint2(string name) {
+    cout << name << endl;
+}
+
+void test07() {
+    MyPrint myPrint;
+    myPrint("hello world");
+
+    MyPrint2("hello2");
+}
+
+
+class MyAdd {
+public:
+    int operator()(int a, int b) {
+        return a + b;
+    }
+};
+
+void test07_2() {
+    MyAdd myAdd;
+    int res = myAdd(1, 2);
+    cout << "res = " << res << endl;
+
+    // 匿名函数对象
+    cout << MyAdd()(1,2) << endl;
+
+}
+
 
 
 
@@ -209,7 +383,22 @@ int main() {
 
 //    test03();
 
-    test04();
+//    test04();
+
+//    test05();
+
+//    test05_1();
+
+//    test05_2();
+
+//    test06();
+
+//    test06_2();
+
+//    test07();
+
+    test07_2();
+
 
 
 }
