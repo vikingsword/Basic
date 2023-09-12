@@ -13,7 +13,7 @@ public:
     void showInfo();
 
     // 获取岗位名称
-    string getDepName();
+    string getDeptName();
 
 
 };

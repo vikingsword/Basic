@@ -34,4 +34,10 @@ add_executable(Basic main.cpp
         p84_p166/worker_manager/worker_manager.cpp
         p84_p166/worker_manager/headers/worker.h
         p84_p166/worker_manager/headers/employee.h
+        p84_p166/worker_manager/employee.cpp
+        p84_p166/worker_manager/headers/manager.h
+        p84_p166/worker_manager/manager.cpp
+        p84_p166/worker_manager/headers/boss.h
+        p84_p166/worker_manager/boss.cpp
+        p84_p166/worker_manager/test.cpp
 )
