@@ -28,4 +28,5 @@ add_executable(Basic main.cpp
         p84/07_operators_reload.cpp
         p84/08_extends.cpp
         p84/09_polymorphic.cpp
+        p84/10_file.cpp
 )
