@@ -1,6 +1,6 @@
 //#include "iostream"
-//#include "header/point.h"
-//#include "header/circle.h"
+//#include "headers/point.h"
+//#include "headers/circle.h"
 //
 //using namespace std;
 //

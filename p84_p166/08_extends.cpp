@@ -11,7 +11,7 @@
 //// java 页面
 //class Java {
 //public:
-//    void header() {
+//    void headers() {
 //        cout << "首页、公开课、登录、注册...（公共头部）" << endl;
 //    }
 //
@@ -31,7 +31,7 @@
 ////Python页面
 //class Python {
 //public:
-//    void header() {
+//    void headers() {
 //        cout << "首页、公开课、登录、注册...（公共头部）" << endl;
 //    }
 //
@@ -51,7 +51,7 @@
 ////C++页面
 //class CPP {
 //public:
-//    void header() {
+//    void headers() {
 //        cout << "首页、公开课、登录、注册...（公共头部）" << endl;
 //    }
 //
@@ -73,7 +73,7 @@
 //    //Java页面
 //    cout << "Java下载视频页面如下： " << endl;
 //    Java ja;
-//    ja.header();
+//    ja.headers();
 //    ja.footer();
 //    ja.left();
 //    ja.content();
@@ -82,7 +82,7 @@
 //    //Python页面
 //    cout << "Python下载视频页面如下： " << endl;
 //    Python py;
-//    py.header();
+//    py.headers();
 //    py.footer();
 //    py.left();
 //    py.content();
@@ -91,7 +91,7 @@
 //    //C++页面
 //    cout << "C++下载视频页面如下： " << endl;
 //    CPP cp;
-//    cp.header();
+//    cp.headers();
 //    cp.footer();
 //    cp.left();
 //    cp.content();
@@ -110,7 +110,7 @@
 //// 公共页面类
 //class BasePage {
 //public:
-//    void header() {
+//    void headers() {
 //        cout << "首页、公开课、登录、注册...（公共头部）" << endl;
 //    }
 //
@@ -154,7 +154,7 @@
 //    //Java页面
 //    cout << "Java下载视频页面如下： " << endl;
 //    Java2 ja;
-//    ja.header();
+//    ja.headers();
 //    ja.footer();
 //    ja.left();
 //    ja.content();
@@ -163,7 +163,7 @@
 //    //Python页面
 //    cout << "Python下载视频页面如下： " << endl;
 //    Python2 py;
-//    py.header();
+//    py.headers();
 //    py.footer();
 //    py.left();
 //    py.content();
@@ -172,7 +172,7 @@
 //    //C++页面
 //    cout << "C++下载视频页面如下： " << endl;
 //    CPP2 cp;
-//    cp.header();
+//    cp.headers();
 //    cp.footer();
 //    cp.left();
 //    cp.content();

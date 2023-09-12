@@ -18,15 +18,20 @@ add_executable(Basic main.cpp
         p1_p83/12_struct.cpp
         p1_p83/temp.cpp
         p1_p83/13_address_manager.cpp
-        p84/01_memory_mode.cpp
-        p84/02_function_enhance.cpp
-        p84/03_object.cpp
-        p84/temp.cpp
-        p84/04_object_2.cpp
-        p84/05_this_pointer.cpp
-        p84/06_friend.cpp
-        p84/07_operators_reload.cpp
-        p84/08_extends.cpp
-        p84/09_polymorphic.cpp
-        p84/10_file.cpp
+        p84_p166/01_memory_mode.cpp
+        p84_p166/02_function_enhance.cpp
+        p84_p166/03_object.cpp
+        p84_p166/temp.cpp
+        p84_p166/04_object_2.cpp
+        p84_p166/05_this_pointer.cpp
+        p84_p166/06_friend.cpp
+        p84_p166/07_operators_reload.cpp
+        p84_p166/08_extends.cpp
+        p84_p166/09_polymorphic.cpp
+        p84_p166/10_file.cpp
+        p84_p166/worker_manager/employee_management.cpp
+        p84_p166/worker_manager/headers/workManagement.h
+        p84_p166/worker_manager/worker_manager.cpp
+        p84_p166/worker_manager/headers/worker.h
+        p84_p166/worker_manager/headers/employee.h
 )
