@@ -38,6 +38,7 @@ public:
     int IsExist(int id);
 
     // 修改职工信息
+    void modify_staff();
 
     // 查找职工信息
 

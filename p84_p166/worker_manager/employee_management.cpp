@@ -34,9 +34,9 @@ int main() {
             case 3:
                 wm.delete_staff();
                 break;
-//            case 4:
-//                modify_staff();
-//                break;
+            case 4:
+                wm.modify_staff();
+                break;
 //            case 5:
 //                find_staff();
 //                break;
