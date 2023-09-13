@@ -1,5 +1,8 @@
 #pragma once
 #include "iostream"
+#include "worker.h"
+#include "fstream"
+#define FILENAME "employeeFile.txt"
 
 using namespace std;
 
@@ -16,7 +19,10 @@ public:
     void exit_system();
 
     // 增加职工信息
+    void add_staff();
 
+    // 保存职工信息
+    void save();
 
     // 显示职工信息
 
@@ -37,6 +43,14 @@ public:
 
     // 析构函数
     ~WorkerManager();
+
+
+    // 记录文件中的人数个数
+    int m_EmpNum;
+
+    // 员工数组的指针
+    Worker ** m_EmpArray;
+
 
 
 };

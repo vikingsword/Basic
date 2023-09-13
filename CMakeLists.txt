@@ -30,7 +30,7 @@ add_executable(Basic main.cpp
         p84_p166/09_polymorphic.cpp
         p84_p166/10_file.cpp
         p84_p166/worker_manager/employee_management.cpp
-        p84_p166/worker_manager/headers/workManagement.h
+        p84_p166/worker_manager/headers/WorkerManager.h
         p84_p166/worker_manager/worker_manager.cpp
         p84_p166/worker_manager/headers/worker.h
         p84_p166/worker_manager/headers/employee.h
