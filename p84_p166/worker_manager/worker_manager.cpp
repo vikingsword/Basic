@@ -5,10 +5,52 @@
 
 
 WorkerManager::WorkerManager() {
-    // 记录文件中的人数的个数
-    this->m_EmpNum = 0;
-    // 初始化指针数据
-    this->m_EmpArray = NULL;
+
+    ifstream ifs;
+    ifs.open(FILENAME, ios::in);
+
+    // 文件不存在
+    if (!ifs.is_open()) {
+//        cout << "file not exist" << endl;
+        this->m_EmpNum = 0;
+        this->m_EmpArray = NULL;
+        // 初始化文件为空标志
+        this->m_FileIsEmpty = true;
+        ifs.close();
+        return;
+    }
+
+    // 文件存在并且无记录
+    char ch;
+    ifs >> ch;
+    if (ifs.eof()) {
+//        cout << "文件为空！" << endl;
+        this->m_EmpNum = 0;
+        this->m_EmpArray = NULL;
+        this->m_FileIsEmpty = true;
+        ifs.close();
+        return;
+    }
+
+    // 文件存在并有记录
+    int num  = this->get_EmpNum();
+    cout << "职工个数为： " << num << endl;
+    this->m_EmpNum = num;
+    // 根据职工数创建数组
+    this->m_EmpArray = new Worker * [this->m_EmpNum];
+    // 设置文件存在标记
+    this->m_FileIsEmpty = false;
+    // 初始化职工
+    init_Emp();
+
+//    // 测试代码
+//    for (int i = 0; i < m_EmpNum; i++) {
+//        cout << "职工号： " << this->m_EmpArray[i]->m_Id
+//            << "\t职工姓名：" << this->m_EmpArray[i]->m_Name
+//            << "\t部门编号：" << this->m_EmpArray[i]->m_DeptId << endl;
+//    }
+
+
 }
 
 WorkerManager::~WorkerManager() {
@@ -80,6 +122,12 @@ void WorkerManager::add_staff() {
             cout << "请输入第 " << i + 1 << " 个新职工编号：" << endl;
             cin >> id;
 
+            // 判断当前输入的职工编号是否存在
+            if (this->IsExist(id)) {
+                cout << "当前职工已经存在，请重新输入： " << endl;
+                continue;
+            }
+
 
             cout << "请输入第 " << i + 1 << " 个新职工姓名：" << endl;
             cin >> name;
@@ -118,6 +166,9 @@ void WorkerManager::add_staff() {
             //更新新的个数
             this->m_EmpNum = newSize;
 
+            // 更新职工不为空的标志
+            this->m_FileIsEmpty = false;
+
             //提示信息
             cout << "成功添加" << add_Num << "名新职工！" << endl;
 
@@ -133,12 +184,106 @@ void WorkerManager::add_staff() {
     system("cls");
 }
 
+int WorkerManager::get_EmpNum() {
+    ifstream ifs;
+    ifs.open(FILENAME, ios::in);
 
+    int id;
+    string name;
+    int dId;
 
+    int num = 0;
+    while (ifs >> id && ifs >> name && ifs >> dId) {
+        // 记录人数
+        num++;
+    }
+    ifs.close();
 
+    return num;
+}
 
+void WorkerManager::init_Emp() {
+    ifstream ifs;
 
+    ifs.open(FILENAME, ios::in);
 
+    int id;
+    string name;
+    int dId;
+
+    int index = 0;
+    while (ifs >> id && ifs >> name && ifs >> dId) {
+        Worker * worker = NULL;
+        if (dId == 1){
+            worker = new Employee(id, name, dId);
+        } else if (dId == 2) {
+            worker = new Manager(id, name, dId);
+        } else {
+            worker = new Boss(id, name, dId);
+        }
+        // 存放在数组中
+        this->m_EmpArray[index] = worker;
+        index++;
+    }
+}
+
+// 显示职工
+void WorkerManager::show_staff() {
+    if (this->m_FileIsEmpty){
+        cout << "文件不存在或者记录为空！ " << endl;
+    } else {
+        for (int i = 0; i < m_EmpNum; i++) {
+            // 利用多态调用接口
+            this->m_EmpArray[i]->showInfo();
+        }
+    }
+
+    system("pause");
+    system("cls");
+}
+
+// 判断职工是否存在
+int WorkerManager::IsExist(int id) {
+    int index = -1;
+    for (int i = 0; i < this->m_EmpNum; i++) {
+        if (this->m_EmpArray[i]->m_Id == id) {
+            index = i;
+            break;
+        }
+    }
+    return index;
+}
+
+// 删除职工
+void WorkerManager::delete_staff() {
+    if (this->m_FileIsEmpty) {
+        cout << "文件不存在或者记录为空！ " << endl;
+    } else {
+        // 按职工编号删除
+        cout << "请输入想删除的职工编号： " << endl;
+        int id = 0;
+        cin >> id;
+
+        int index = this->IsExist(id);
+
+        if (index != -1) {
+            // 删除
+            for (int i = index; i < this->m_EmpNum; ++i) {
+                this->m_EmpArray[i] = this->m_EmpArray[i + 1];
+            }
+            this->m_EmpNum--;
+
+            this->save();
+            cout << "删除成功！ " << endl;
+        } else {
+            cout << "删除失败， 未找到改职工" << endl;
+        }
+    }
+
+    system("pause");
+    system("cls");
+
+}
 
 
 

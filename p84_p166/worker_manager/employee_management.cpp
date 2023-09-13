@@ -28,12 +28,12 @@ int main() {
             case 1:
                 wm.add_staff();
                 break;
-//            case 2:
-//                show_staff();
-//                break;
-//            case 3:
-//                delete_staff();
-//                break;
+            case 2:
+                wm.show_staff();
+                break;
+            case 3:
+                wm.delete_staff();
+                break;
 //            case 4:
 //                modify_staff();
 //                break;
