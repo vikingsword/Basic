@@ -37,12 +37,15 @@ int main() {
             case 4:
                 wm.modify_staff();
                 break;
-//            case 5:
-//                find_staff();
-//                break;
-//            case 6:
-//                clear_staff();
-//                break;
+            case 5:
+                wm.find_staff();
+                break;
+            case 6:
+                wm.sort_staff();
+                break;
+            case 7:
+                wm.clear_staff();
+                break;
             default:
                 cout << "您输入的数字不正确，请重新输入: " << endl;
                 break;

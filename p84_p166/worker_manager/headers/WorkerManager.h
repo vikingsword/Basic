@@ -41,12 +41,13 @@ public:
     void modify_staff();
 
     // 查找职工信息
+    void find_staff();
 
     // 按照编号排序
+    void sort_staff();
 
     // 清空所有文档
-
-
+    void clear_staff();
 
 
 
