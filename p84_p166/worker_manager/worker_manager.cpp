@@ -34,7 +34,7 @@ WorkerManager::WorkerManager() {
 
     // 文件存在并有记录
     int num = this->get_EmpNum();
-    cout << "职工个数为： " << num << endl;
+//    cout << "职工个数为： " << num << endl;
     this->m_EmpNum = num;
     // 根据职工数创建数组
     this->m_EmpArray = new Worker *[this->m_EmpNum];

@@ -1,9 +1,5 @@
 #include "iostream"
 #include "headers/WorkerManager.h"
-#include "headers/worker.h"
-#include "headers/employee.h"
-#include "headers/manager.h"
-#include "headers/boss.h"
 
 using namespace std;
 
@@ -53,9 +49,6 @@ int main() {
         }
     }
 
-
-
-    return 0;
 }
 
 

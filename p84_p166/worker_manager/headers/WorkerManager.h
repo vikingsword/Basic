@@ -23,9 +23,12 @@ public:
 
     // 保存职工信息
     void save();
+
     bool m_FileIsEmpty;
+
     // 统计人数
     int get_EmpNum();
+
     // 初始化员工
     void init_Emp();
 
@@ -35,6 +38,7 @@ public:
     // 删除离职职工
     void delete_staff();
     // 按照职工编号判断职工是否存在,若存在返回职工在数组中位置，不存在返回-1
+
     int IsExist(int id);
 
     // 修改职工信息
