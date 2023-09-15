@@ -40,4 +40,12 @@ add_executable(Basic main.cpp
         p84_p166/worker_manager/headers/boss.h
         p84_p166/worker_manager/boss.cpp
         p84_p166/worker_manager/test.cpp
+        p167/01_template_func.cpp
+        p167/temp.cpp
+        p167/02_template_class.cpp
+        p167/headers/person.h
+        p167/headers/person.hpp
+        p167/02_template_example.cpp
+        p167/headers/myArray.hpp
+        p167/03_stl.cpp
 )
