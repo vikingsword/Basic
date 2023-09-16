@@ -49,4 +49,6 @@ add_executable(Basic main.cpp
         p167/headers/myArray.hpp
         p167/03_stl.cpp
         p167/04_string.cpp
+        p167/05_vector.cpp
+        p167/06_deque.cpp
 )
