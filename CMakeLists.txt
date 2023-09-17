@@ -40,20 +40,20 @@ add_executable(Basic main.cpp
         p84_p166/worker_manager/headers/boss.h
         p84_p166/worker_manager/boss.cpp
         p84_p166/worker_manager/test.cpp
-        p167/01_template_func.cpp
-        p167/test/temp.cpp
-        p167/02_template_class.cpp
-        p167/headers/person.h
-        p167/headers/person.hpp
-        p167/02_template_example.cpp
-        p167/headers/myArray.hpp
-        p167/03_stl.cpp
-        p167/04_string.cpp
-        p167/05_vector.cpp
-        p167/06_deque.cpp
-        p167/07_example.cpp
-        p167/08_stack_queue_list.cpp
-        p167/09_set_map.cpp
-        p167/test/temp2.cpp
-        p167/test/temp.cpp
+        p167_p236/01_template_func.cpp
+        p167_p236/test/temp.cpp
+        p167_p236/02_template_class.cpp
+        p167_p236/headers/person.h
+        p167_p236/headers/person.hpp
+        p167_p236/02_template_example.cpp
+        p167_p236/headers/myArray.hpp
+        p167_p236/03_stl.cpp
+        p167_p236/04_string.cpp
+        p167_p236/05_vector.cpp
+        p167_p236/06_deque.cpp
+        p167_p236/07_example.cpp
+        p167_p236/08_stack_queue_list.cpp
+        p167_p236/09_set_map.cpp
+        p167_p236/test/temp2.cpp
+        p167_p236/test/temp.cpp
 )
