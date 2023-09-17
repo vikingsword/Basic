@@ -475,7 +475,7 @@ void test12() {
 #define MEISHU 1
 #define YANFA 3
 
-// todo 如果类名是 Worker 会在第二次循环的时候退出程序
+// 如果类名是 Worker 会在第二次循环的时候退出程序
 class Worker {
 public:
     string m_name;
