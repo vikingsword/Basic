@@ -41,7 +41,7 @@ add_executable(Basic main.cpp
         p84_p166/worker_manager/boss.cpp
         p84_p166/worker_manager/test.cpp
         p167/01_template_func.cpp
-        p167/temp.cpp
+        p167/test/temp.cpp
         p167/02_template_class.cpp
         p167/headers/person.h
         p167/headers/person.hpp
@@ -54,4 +54,6 @@ add_executable(Basic main.cpp
         p167/07_example.cpp
         p167/08_stack_queue_list.cpp
         p167/09_set_map.cpp
+        p167/test/temp2.cpp
+        p167/test/temp.cpp
 )
