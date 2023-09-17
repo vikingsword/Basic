@@ -53,4 +53,5 @@ add_executable(Basic main.cpp
         p167/06_deque.cpp
         p167/07_example.cpp
         p167/08_stack_queue_list.cpp
+        p167/09_set_map.cpp
 )
