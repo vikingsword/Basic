@@ -16,12 +16,12 @@ add_executable(Basic main.cpp
         p1_p83/10_function_with_file.cpp
         p1_p83/11_pointer.cpp
         p1_p83/12_struct.cpp
-        p1_p83/temp.cpp
+        temp/temp2.cpp
         p1_p83/13_address_manager.cpp
         p84_p166/01_memory_mode.cpp
         p84_p166/02_function_enhance.cpp
         p84_p166/03_object.cpp
-        p84_p166/temp.cpp
+        temp/temp3.cpp
         p84_p166/04_object_2.cpp
         p84_p166/05_this_pointer.cpp
         p84_p166/06_friend.cpp
@@ -56,4 +56,6 @@ add_executable(Basic main.cpp
         p167_p236/09_set_map.cpp
         p167_p236/test/temp2.cpp
         p167_p236/test/temp.cpp
+        p237_p314/01_function_object.cpp
+        temp/temp1.cpp
 )
