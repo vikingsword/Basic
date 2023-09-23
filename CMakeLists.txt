@@ -58,4 +58,5 @@ add_executable(Basic main.cpp
         p167_p236/test/temp.cpp
         p237_p314/01_function_object.cpp
         temp/temp1.cpp
+        temp/temp3.cpp
 )

@@ -1,165 +1,254 @@
-//#include "iostream"
-//
-//using namespace std;
-//
-//#include "string"
-//
-//#define MAX 1000
-////设计联系人结构体
-//struct Person {
-//    string m_Name;
-//    int m_Sex;
-//    int m_Age;
-//    string m_Phone;
-//    string m_Addr;
-//};
-//struct Addressbooks {
-////    通讯录中保存的联系人数组
-//    struct Person personArray[MAX];
-//// 通讯录中当前记录联系人个数
-//    int m_Size;
-//};
-//
-////1.添加联系人
-//void addPerson(Addressbooks *abs) {
-//    //判断通讯录是否已满，如果满了就不在添加
-//    if (abs->m_Size == MAX) {
-//        cout << "通讯录已满，无法添加，宝宝" << endl;
-//    } else {
-//        //添加具体联系人
-//        string name;
-//        cout << "请输入姓名" << endl;
-//        cin >> name;
-//        abs->personArray[abs->m_Size].m_Name = name;
-//
-//        //性别
-//
-//        cout << "请输入性别：" << endl;
-//        cout << "1____男" << endl;
-//        cout << "2____女" << endl;
-//        int sex = 0;
-//
-//        while (true) {
-//            cin >> sex;
-//            if (sex == 1 || sex == 2) {
-//                abs->personArray[abs->m_Size].m_Sex = sex;
-//                break;
-//            }
-//            cout << "输入有误，傻逼，请重新输入别再错了奥" << endl;
-//        }
-//        //年龄
-//        cout << "请输入年龄；" << endl;
-//        int age = 0;
-//        cin >> age;
-//        abs->personArray[abs->m_Size].m_Age = age;
-//
-//        //住址
-//        cout << "请输入住址" << endl;
-//        string address;
-//        cin >> address;
-//        abs->personArray[abs->m_Size].m_Addr = address;
-//
-//        //更新通讯录人数
-//        abs->m_Size++;
-//        cout << "添加成功" << endl;
-//
-//        system("pause");//请按任意键结束
-//        system("cls");//清屏操作
-//    }
-//}
-//
-////2.显示所有联系人
-//void showPerson(Addressbooks *abs) {
-////判断通讯录中人数是否为0，如果为0提示记录为空
-////如果不为0，显示记录的联系人信息
-//    if (abs->m_Size == 0) {
-//        cout << "当前记录为空" << endl;
-//    } else {
-//        for (int i = 0; i < abs->m_Size; ++i) {
-//            cout << "姓名：" << abs->personArray[i].m_Name << "\t";
-//            cout << "性别：" << abs->personArray[i].m_Sex << "\t";
-//            cout << "年龄：" << abs->personArray[i].m_Age << "\t";
-//            cout << "电话：" << abs->personArray[i].m_Phone << "\t";
-//            cout << "住址：" << abs->personArray[i].m_Addr << endl;
-//        }
-//    }
-//}
-//
-////检测联系人是否存在，如果存在，返回联系人所在数组中的具体位置，不存在返回-1
-////参数1  通讯录  参数2  对比姓名
-//int isExist(Addressbooks *abs, string name) {
-//    for (int i = 0; i < abs->m_Size; ++i) {
-//        //找到用户输入的姓名了
-//        if (abs->personArray[i].m_Name == name) {
-//            return i;
-//        }
-//    }
-//    return -1;
-//}
-//
-////3.删除指定联系人
-//void deletePerson(Addressbooks *abs) {
-//    cout << "请输入宁要删除的联系人" << endl;
-//    string name;
-//    cin >> name;
-//    int ret = isExist(abs, name);
-//}
-//
-////菜单页面
-//void showMenu() {
-//    cout << "*********************" << endl;
-//    cout << "*****1、添加联系人*****" << endl;
-//    cout << "*****2、显示联系人*****" << endl;
-//    cout << "*****3、删除联系人*****" << endl;
-//    cout << "*****4、查找联系人*****" << endl;
-//    cout << "*****5、修改联系人*****" << endl;
-//    cout << "*****6、清空联系人*****" << endl;
-//    cout << "*****0、退出联系人*****" << endl;
-//    cout << "*********************" << endl;
-//}
-//
-//int main() {
-//
-//    //创建通讯录结构体变量
-//    Addressbooks abs;
-//    //初始化通讯录中当前人员个数
-//    abs.m_Size = 0;
-//    int select = 0;
-//    showMenu();
-//
-//    while (true) {
-//        cin >> select;
-//        switch (select) {
-//            case 1://添加联系人
-//                addPerson(&abs);
-//                break;
-//            case 2://显示联系人
-//                showPerson(&abs);
-//                break;
-//            case 3://删除联系人
-//            {
-//                cout << "请输入删除联系人姓名" << endl;
-//                string name;
-//                cin >> name;
-//                break;
-//            }
-//
-////            case 4:
-////                break;
-////            case 5:
-////                break;
-////            case 6:
-////                break;
-////            case 0:
-////                cout << "欢迎下次光临，尊敬的宝宝，手牌请拿好" << endl;
-////                system("pause");
-//            default:
-//                break;
-//
-//        }
-//    }
-//
-//
-//    system("pause");
-//    return 0;
-//}
+#include "iostream"
+#include "vector"
+#include "map"
+#include "list"
+#include "algorithm"
+
+using namespace std;
+
+/**
+* @author: vikingar
+* @time: 2023/9/23 22:01
+* @description:  c++ 提高编程
+*/
+
+template<typename T>
+void swapNum(T &num1, T &num2) {
+    T temp = num1;
+    num1 = num2;
+    num2 = temp;
+}
+
+void temp01() {
+    int a = 1;
+    int b = 2;
+    swapNum(a, b);
+    cout << "a = " << a << "; b = " << b << endl;
+
+    float c = 1.1;
+    float d = 2.2;
+    swapNum(c, d);
+    cout << "c = " << c << "; d = " << d << endl;
+}
+
+template<typename T>
+void func() {
+    cout << "func" << endl;
+}
+
+void temp02() {
+    func<int>();
+}
+
+
+/**
+ * arr sort
+ */
+template<typename T>
+void printArr(T arr[], int len) {
+    cout << "arr = ";
+    for (int i = 0; i < len; ++i) {
+        cout << arr[i] << " ";
+    }
+}
+
+template<typename T>
+void mySwap(T &num1, T &num2) {
+    T temp = num1;
+    num1 = num2;
+    num2 = temp;
+}
+
+template<typename T>
+void sortArr(T arr[], int len) {
+    // 选择排序
+    for (int i = 0; i < len - 1; ++i) {
+        int min = i;
+        for (int j = i + 1; j < len; ++j) {
+            if (arr[min] > arr[j]) {
+                min = j;
+            }
+        }
+        if (i != min) {
+            mySwap(arr[i], arr[min]);
+        }
+    }
+}
+
+void temp03() {
+    int arr[] = {6, 2, 9, 5, 3, 4, 8, 1, 7};
+    int len = sizeof(arr) / sizeof(arr[0]);
+    sortArr(arr, len);
+    printArr(arr, len);
+}
+
+
+/**
+ * 普通函数和模板函数
+ * 默认调用普通函数
+ */
+void myPrint(int a, int b) {
+    cout << "normal function" << endl;
+}
+
+template<typename T>
+void myPrint(T a, T b) {
+    cout << "template function" << endl;
+}
+
+template<typename T>
+void myPrint(T a, T b, T c) {
+    cout << "overload template function" << endl;
+}
+
+void temp04() {
+    int a = 1;
+    int b = 2;
+    char c = '3';
+    int d = 4;
+    myPrint(a, c);
+    myPrint(a, b);
+    myPrint<>(a, b);
+    myPrint(a, b, d);
+}
+
+
+/**
+ * 具体化模板和常规模板
+ */
+template<typename T>
+bool myCompare(T &a, T &b) {
+    if (a == b) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+class Person {
+public:
+    string m_name;
+    int m_age;
+};
+
+template<>
+bool myCompare(Person &p1, Person &p2) {
+    if (p1.m_name == p2.m_name && p1.m_age == p2.m_age) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+void temp05() {
+    Person p1 = {"zs", 19};
+    Person p2 = {"ls", 20};
+    Person p3 = {"ls", 20};
+    bool flag1 = myCompare(p1, p2);
+    bool flag2 = myCompare(p2, p3);
+    cout << "flag1 = " << flag1 << endl;
+    cout << "flag2 = " << flag2 << endl;
+}
+
+
+/**
+ * class template
+ */
+template<typename NameType, typename AgeType>
+class Person2 {
+public:
+    NameType m_name;
+    AgeType m_age;
+
+    Person2(NameType name, AgeType age) {
+        this->m_name = name;
+        this->m_age = age;
+    }
+
+    void showPerson2() {
+        cout << "name = " << this->m_name << "; age = " << this->m_age << endl;
+    }
+};
+
+void temp06() {
+    Person2 p = {"zs", 29};
+    p.showPerson2();
+
+    Person2<string, int> p2("ls", 28);
+    p2.showPerson2();
+}
+
+
+/**
+ * 类模板对象做函数参数
+ */
+template<typename NameType, typename AgeType>
+class Person3 {
+public:
+    NameType m_name;
+    AgeType m_age;
+
+    Person3(NameType name, AgeType age) {
+        this->m_name = name;
+        this->m_age = age;
+    }
+
+    void showPerson3() {
+        cout << "name = " << this->m_name << "; age = " << this->m_age << endl;
+    }
+};
+
+void printPerson1(Person3<string, int> &p) {
+    p.showPerson3();
+}
+
+// 参数模板化
+template<typename T, typename R>
+void printPerson2(Person3<T,R> &p) {
+    p.showPerson3();
+    cout << "T的类型为： " << typeid(T).name() << endl;
+    cout << "R的类型为：" << typeid(R).name() << endl;
+}
+
+// 类模板化
+template<typename T>
+void printPerson3(T &p) {
+    cout << "T的类型为： " << typeid(T).name() << endl;
+    p.showPerson3();
+}
+
+void temp07() {
+    Person3<string, int> p ("zs", 28);
+    printPerson1(p);
+    cout << "---------" << endl;
+
+    printPerson2(p);
+    cout << "-------------" << endl;
+
+    printPerson3(p);
+}
+
+
+void temp() {}
+
+int main() {
+
+//    temp01();
+//    temp02();
+//    temp03();
+//    temp04();
+//    temp05();
+//    temp06();
+    temp07();
+//    temp08();
+//    temp09();
+//    temp010();
+//    temp011();
+//    temp012();
+//    temp013();
+//    temp014();
+//    temp015();
+//    temp016();
+
+    return 0;
+}
