@@ -59,4 +59,6 @@ add_executable(Basic main.cpp
         p237_p314/01_function_object.cpp
         temp/temp1.cpp
         temp/temp3.cpp
+        temp/temp4.cpp
+        temp/temp5.cpp
 )
