@@ -64,4 +64,6 @@ add_executable(Basic main.cpp
         cherno/p1_p25/demo1.cpp
         cherno/p1_p25/log.cpp
         itheima/temp/temp6.cpp
+        itheima/p237_p314/02_algorithm.cpp
+        itheima/temp/temp7.cpp
 )

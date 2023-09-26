@@ -11,3 +11,7 @@ void printVector(vector<T> &v) {
     }
     cout << endl;
 }
+
+void printValue(int value) {
+    cout << value << " ";
+}
