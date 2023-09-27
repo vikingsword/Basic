@@ -66,4 +66,6 @@ add_executable(Basic main.cpp
         itheima/temp/temp6.cpp
         itheima/p237_p314/02_algorithm.cpp
         itheima/temp/temp7.cpp
+        itheima/p237_p314/speech_system/speechManager.cpp
+        itheima/p237_p314/speech_system/Speaker.cpp
 )
