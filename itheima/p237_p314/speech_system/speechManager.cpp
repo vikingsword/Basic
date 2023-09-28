@@ -72,7 +72,19 @@ void SpeechManage::speechDraw() {
     cout << "抽签后顺序如下： " << endl;
     if (this->m_index == 1) {
         random_shuffle(this->v1.begin(), this->v1.end());
+        for (auto elem : v1) {
+            cout << elem << " ";
+        }
+        cout << endl;
+    } else {
+        random_shuffle(v2.begin(), v2.end());
+        for (auto elem : v2) {
+            cout << elem << " ";
+        }
+        cout << endl;
     }
+    cout << "-------------" << endl;
+
 }
 
 void SpeechManage::startSpeech() {
