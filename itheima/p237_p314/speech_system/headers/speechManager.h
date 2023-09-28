@@ -45,6 +45,30 @@ public:
     // 抽签
     void speechDraw();
 
+    // 比赛
+    void speechContest();
+
+    // 显示比赛结果
+    void showScore();
+
+    // 保存分数
+    void saveRecord();
+
+
+    // 保存记录
+    void loadRecord();
+
+    // 文件为空的标志
+    bool fileIsEmpty;
+
+    // 往届记录
+    map<int, vector<string>> m_Record;
+
+    void showRecord();
+
+
+    // 清空记录
+    void clearRecord();
 
 
 };
