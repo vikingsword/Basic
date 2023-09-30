@@ -293,10 +293,6 @@ void SpeechManage::clearRecord() {
 
 
 
-
-
-
-
 void SpeechManage::startSpeech() {
     //第一轮比赛
     //1、抽签
