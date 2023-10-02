@@ -4,8 +4,9 @@
 #include "map"
 #include "../Speaker.cpp"
 
-
 using namespace std;
+
+
 
 class SpeechManage {
 public:
