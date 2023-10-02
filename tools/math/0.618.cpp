@@ -13,7 +13,7 @@ double getRes(double x) {
     return exp(x) - 5 * x;
 }
 
-auto roundToThreeDecimalPlaces = [](double value) {
+auto roundToThreeDecimal = [](double value) {
     return round(value * 1000.0) / 1000.0;
 };
 
@@ -39,12 +39,12 @@ int main() {
         cout << "第 " << count << " 轮" << endl;
 
         double left = a + 0.382 * (b - a);
-        left = roundToThreeDecimalPlaces(left);
+        left = roundToThreeDecimal(left);
         double right = a + 0.618 * (b - a);
-        right = roundToThreeDecimalPlaces(right);
+        right = roundToThreeDecimal(right);
 
-        double res1 = roundToThreeDecimalPlaces(getRes(left));
-        double res2 = roundToThreeDecimalPlaces(getRes(right));
+        double res1 = roundToThreeDecimal(getRes(left));
+        double res2 = roundToThreeDecimal(getRes(right));
 
         cout << "a = " << a << endl;
         cout << "b = " << b << endl;

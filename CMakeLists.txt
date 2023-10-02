@@ -70,5 +70,5 @@ add_executable(Basic main.cpp
         itheima/p237_p314/speech_system/Speaker.cpp
         tools/math/demo1.cpp
         tools/math/test.cpp
-        tools/math/demo2.cpp
+        tools/math/0.618.cpp
 )
