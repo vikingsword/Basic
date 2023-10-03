@@ -73,4 +73,5 @@ add_executable(Basic main.cpp
         tools/math/0.618.cpp
         itheima/p237_p314/speech_system/speechManagerMain.cpp
         itheima/temp/temp8.cpp
+        tools/trick/01_lambda.cpp
 )

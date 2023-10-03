@@ -371,7 +371,7 @@
 //        cout << "put in java" << endl;
 //    }
 //    void putSomething() {
-//        cout << "put sugar" << endl;
+//        cout << "put trick" << endl;
 //    }
 //};
 //class Tea : public AbstractDrinking {

@@ -215,7 +215,7 @@
 //    }
 //    // 加入辅料
 //    virtual void putSomething() {
-//        cout << "add sugar" << endl;
+//        cout << "add trick" << endl;
 //    }
 //};
 //// make tea
