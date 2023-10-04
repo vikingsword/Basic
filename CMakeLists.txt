@@ -74,4 +74,12 @@ add_executable(Basic main.cpp
         itheima/p237_p314/speech_system/speechManagerMain.cpp
         itheima/temp/temp8.cpp
         tools/trick/01_lambda.cpp
+        itheima/p237_p314/computer_reservation/ComputerOrder.cpp
+        itheima/p237_p314/computer_reservation/headers/Student.h
+        itheima/p237_p314/computer_reservation/Student.cpp
+        itheima/p237_p314/computer_reservation/headers/Teacher.h
+        itheima/p237_p314/computer_reservation/Teacher.cpp
+        itheima/p237_p314/computer_reservation/headers/Manager.h
+        itheima/p237_p314/computer_reservation/Manager.cpp
+        itheima/p237_p314/computer_reservation/headers/globalFile.h
 )
