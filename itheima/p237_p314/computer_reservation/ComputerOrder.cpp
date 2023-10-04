@@ -103,6 +103,7 @@ void login(string filename, int type) {
                 system("cls");
                 //创建管理员对象
                 person = new Manager(name, pwd);
+                managerMenu(person);
                 return;
             }
         }
@@ -112,6 +113,36 @@ void login(string filename, int type) {
     cout << "login failed ! " << endl;
     system("cls");
 
+}
+
+void managerMenu(Identity * & manager) {
+    while (true) {
+        manager->operateMenu();
+
+        Manager * man = (Manager *) manager;
+
+        int select = 0;
+        cin >> select;
+
+        if (select == 1) {
+            cout << "添加账号" << endl;
+            man->addPerson();
+        } else if (select == 2) {
+            cout << "查看账号" << endl;
+            man->showPerson();
+        } else if (select == 3) {
+            cout << "查看机房" << endl;
+            man->showComputer();
+        } else if (select == 4) {
+            cout << "清空预约" << endl;
+            man->clearFile();
+        } else {
+            delete manager;
+            cout << "注销成功" << endl;
+            system("cls");
+            return;
+        }
+    }
 }
 
 
