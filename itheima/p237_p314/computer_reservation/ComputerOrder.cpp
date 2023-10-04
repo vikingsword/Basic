@@ -32,8 +32,10 @@ void printMenu() {
     cout << "输入您的选择: ";
 }
 
+
 void login(string filename, int type) {
-    Identity * person = NULL;
+
+    Identity *person = NULL;
 
     ifstream ifs;
 
@@ -68,19 +70,46 @@ void login(string filename, int type) {
         string fPwd;
         while (ifs >> fId && ifs >> fName && ifs >> fPwd) {
             if (id == fId && name == fName && pwd == fPwd) {
-                cout << "学生验证成功！ " << endl;
+                cout << "学生验证登录成功!" << endl;
                 system("cls");
                 person = new Student(id, name, pwd);
+
                 return;
             }
         }
+        return;
     } else if (type == 2) {
         // teacher login
+        int fId;
+        string fName;
+        string fPwd;
+        while (ifs >> fId && ifs >> fName && ifs >> fPwd) {
+            if (id == fId && name == fName && pwd == fPwd) {
+                cout << "教师验证登录成功!" << endl;
+                system("cls");
+                person = new Teacher(id, name, pwd);
+                return;
+            }
+        }
+        return;
     } else if (type == 3) {
         // admin login
+        string fName;
+        string fPwd;
+        while (ifs >> fName && ifs >> fPwd) {
+            if (name == fName && pwd == fPwd) {
+                cout << "管理员验证登录成功!" << endl;
+                //登录成功后，按任意键进入管理员界面
+                system("cls");
+                //创建管理员对象
+                person = new Manager(name, pwd);
+                return;
+            }
+        }
+        return;
     }
 
-    cout << "验证登陆失败! " << endl;
+    cout << "login failed ! " << endl;
     system("cls");
 
 }
@@ -90,7 +119,7 @@ int main() {
 
     int select;
 
-    while(true) {
+    while (true) {
 
         printMenu();
 
@@ -111,10 +140,10 @@ int main() {
                 break;
             case 0:
                 // 退出
-                cout << "欢迎下次使用" << endl;
+                cout << "welcome back" << endl;
                 return 0;
             default:
-                cout << "输入有误，请重新输入!" << endl;
+                cout << "wrong! please input again! " << endl;
                 system("cls");
                 break;
         }
