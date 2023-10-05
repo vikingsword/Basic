@@ -104,6 +104,7 @@ void login(string filename, int type) {
                 //创建管理员对象
                 person = new Manager(name, pwd);
                 managerMenu(person);
+
                 return;
             }
         }
